@@ -26,5 +26,7 @@ public class Song {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "artist_id", referencedColumnName = "id")
     @JsonIgnoreProperties(value = "songs")
+    @lombok.ToString.Exclude
+    @lombok.EqualsAndHashCode.Exclude
     private Artist artist;
 }
