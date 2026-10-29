@@ -29,5 +29,7 @@ public class Artist {
     private int years;
     @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "artist")
+    @lombok.ToString.Exclude
+    @lombok.EqualsAndHashCode.Exclude
     private List<Song> songs;
 }
