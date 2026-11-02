@@ -1,1 +1,29 @@
-document.addEventListener("DOMContentLoaded",async()=>{const status=document.getElementById("catalogStatus");try{const response=await fetch("/artists");if(!response.ok)throw new Error();const data=await response.json();if(!Array.isArray(data))throw new Error();const tbody=document.getElementById("artistsTableBody");for(const item of data){const row=document.createElement("tr");for(const field of ["id","name","description","category","years"]){const cell=document.createElement("td");cell.textContent=field==="artist"?(item.artist?.name||"Sin artista"):(item[field]??"—");row.appendChild(cell);}tbody.appendChild(row);}status.textContent=data.length?data.length+" registros en el catálogo.":"Todavía no hay registros.";}catch{status.textContent="No se pudo cargar el catálogo. Comprueba la conexión con el servidor y recarga la página.";status.setAttribute("role","alert");}});
+document.addEventListener("DOMContentLoaded", async () => {
+  const status = document.getElementById("catalogStatus");
+  try {
+    const response = await fetch("/artists");
+    if (!response.ok) throw new Error();
+    const data = await response.json();
+    if (!Array.isArray(data)) throw new Error();
+    const tbody = document.getElementById("artistsTableBody");
+    for (const item of data) {
+      const row = document.createElement("tr");
+      for (const field of ["id", "name", "description", "category", "years"]) {
+        const cell = document.createElement("td");
+        cell.textContent =
+          field === "artist"
+            ? item.artist?.name || "Sin artista"
+            : (item[field] ?? "—");
+        row.appendChild(cell);
+      }
+      tbody.appendChild(row);
+    }
+    status.textContent = data.length
+      ? data.length + " registros en el catálogo."
+      : "Todavía no hay registros.";
+  } catch {
+    status.textContent =
+      "No se pudo cargar el catálogo. Comprueba la conexión con el servidor y recarga la página.";
+    status.setAttribute("role", "alert");
+  }
+});

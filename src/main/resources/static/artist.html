@@ -1,1 +1,51 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Artistas · Catálogo musical</title><link rel="stylesheet" href="css/catalog.css"></head><body><header><nav aria-label="Navegación principal"><a class="brand" href="index.html">Catálogo musical<span aria-hidden="true">.</span></a><a href="index.html">Inicio</a><a href="artist.html" aria-current="page">Artistas</a><a href="song.html">Canciones</a></nav></header><main><p class="eyebrow">01 / EL CATÁLOGO</p><h1>Artistas.</h1><p class="lead">La información y trayectoria de quienes dan forma a la música.</p><p class="status" role="status" id="catalogStatus">Cargando artistas…</p><div class="table-wrap" role="region" aria-label="Listado de artistas" tabindex="0"><table><thead><tr><th scope="col">ID</th><th scope="col">Nombre</th><th scope="col">Descripción</th><th scope="col">Categoría</th><th scope="col">Años</th></tr></thead><tbody id="artistsTableBody"></tbody></table></div></main><footer>Proyecto Java / Spring Boot · demostración local con datos ficticios</footer><script src="js/artist.js"></script></body></html>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Artistas · Catálogo musical</title>
+    <link rel="stylesheet" href="css/catalog.css" />
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Navegación principal">
+        <a class="brand" href="index.html"
+          >Catálogo musical<span aria-hidden="true">.</span></a
+        ><a href="index.html">Inicio</a
+        ><a href="artist.html" aria-current="page">Artistas</a
+        ><a href="song.html">Canciones</a>
+      </nav>
+    </header>
+    <main>
+      <p class="eyebrow">01 / EL CATÁLOGO</p>
+      <h1>Artistas.</h1>
+      <p class="lead">
+        La información y trayectoria de quienes dan forma a la música.
+      </p>
+      <p class="status" role="status" id="catalogStatus">Cargando artistas…</p>
+      <div
+        class="table-wrap"
+        role="region"
+        aria-label="Listado de artistas"
+        tabindex="0"
+      >
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Años</th>
+            </tr>
+          </thead>
+          <tbody id="artistsTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      Proyecto Java / Spring Boot · demostración local con datos ficticios
+    </footer>
+    <script src="js/artist.js"></script>
+  </body>
+</html>
