@@ -26,3 +26,6 @@ No reutilices credenciales históricas. La demo H2 no acredita compatibilidad My
 Carlos Zabala. Se conserva el historial del proyecto original.
 
 Prueba HTTP reproducible después del arranque: `node scripts/smoke.cjs` (Node22/24). Utiliza y elimina únicamente registros ficticios de prueba.
+
+## Presentación local (02/11/2026)
+Portada y tablas responsive sin CDN. Carga, errores y listas vacías visibles; datos del catálogo insertados con textContent para evitar interpretar HTML almacenado. La interfaz permite consultar; el CRUD se prueba en la API.
