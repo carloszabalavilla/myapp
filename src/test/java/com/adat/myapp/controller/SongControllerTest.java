@@ -12,6 +12,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@org.springframework.test.context.ActiveProfiles("demo")
+@org.springframework.transaction.annotation.Transactional
 @SpringBootTest
 @AutoConfigureMockMvc
 class SongControllerTest {
@@ -39,7 +41,7 @@ class SongControllerTest {
 
     @Test
     void addSong() throws Exception {
-        String songJson = "{\"title\": \"Nueva Canción\", \"category\": \"Rock\"}";
+        String songJson = "{\"title\": \"Nueva Canción\", \"category\": \"Rock\", \"artistId\": 1}";
 
         mockMvc.perform(MockMvcRequestBuilders.post("/songs")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -49,7 +51,7 @@ class SongControllerTest {
 
     @Test
     void modifySong() throws Exception {
-        String songJson = "{\"title\": \"Canción Modificada\", \"category\": \"Pop\"}";
+        String songJson = "{\"title\": \"Canción Modificada\", \"category\": \"Pop\", \"artistId\": 1}";
 
         mockMvc.perform(MockMvcRequestBuilders.put("/songs/{songId}", 1)
                         .contentType(MediaType.APPLICATION_JSON)

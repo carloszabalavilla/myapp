@@ -1,43 +1,41 @@
 <!doctype html>
-<html lang="en">
-
-<head>
-    <title>Inicio</title>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
-</head>
-
-<body>
-<header>
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a aria-current="page" class="nav-link disabled" href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="artist.html">Artista</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="song.html">Cancion</a>
-        </li>
-    </ul>
-</header>
-<main>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">Bienvenido a Artistas and canciones</h1>
-            </div>
-        </div>
-    </div>
-</main>
-<script crossorigin="anonymous"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-<script crossorigin="anonymous"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-</body>
-
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Inicio · Catálogo musical</title>
+    <link rel="stylesheet" href="css/catalog.css" />
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Navegación principal">
+        <a class="brand" href="index.html"
+          >Catálogo musical<span aria-hidden="true">.</span></a
+        ><a href="index.html" aria-current="page">Inicio</a
+        ><a href="artist.html">Artistas</a><a href="song.html">Canciones</a>
+      </nav>
+    </header>
+    <main>
+      <p class="eyebrow">TU BIBLIOTECA MUSICAL</p>
+      <h1>Las historias detrás de cada canción.</h1>
+      <p class="lead">
+        Explora artistas y canciones en un catálogo sencillo. Un proyecto de
+        backend Java con una interfaz para consultar sus datos.
+      </p>
+      <div class="catalog-links">
+        <a href="artist.html"
+          ><span>01 / ARTISTAS →</span>
+          <h2>Conoce a quienes crean.</h2>
+          <p>Nombre, trayectoria y descripción de cada artista.</p></a
+        ><a href="song.html"
+          ><span>02 / CANCIONES →</span>
+          <h2>Encuentra su música.</h2>
+          <p>Títulos, categorías, duración y artista asociado.</p></a
+        >
+      </div>
+    </main>
+    <footer>
+      Proyecto Java / Spring Boot · demostración local con datos ficticios
+    </footer>
+  </body>
 </html>

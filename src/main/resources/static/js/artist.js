@@ -1,21 +1,29 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Hacer una solicitud HTTP para obtener los datos de los artistas
-    fetch("/artists")
-        .then(response => response.json())
-        .then(data => {
-            // Renderizar los datos en la tabla
-            const artistsTableBody = document.getElementById("artistsTableBody");
-            data.forEach(artist => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
-                    <td>${artist.id}</td>
-                    <td>${artist.name}</td>
-                    <td>${artist.description}</td>
-                    <td>${artist.category}</td>
-                    <td>${artist.years}</td>
-                `;
-                artistsTableBody.appendChild(row);
-            });
-        })
-        .catch(error => console.error("Error al obtener los artistas:", error));
+document.addEventListener("DOMContentLoaded", async () => {
+  const status = document.getElementById("catalogStatus");
+  try {
+    const response = await fetch("/artists");
+    if (!response.ok) throw new Error();
+    const data = await response.json();
+    if (!Array.isArray(data)) throw new Error();
+    const tbody = document.getElementById("artistsTableBody");
+    for (const item of data) {
+      const row = document.createElement("tr");
+      for (const field of ["id", "name", "description", "category", "years"]) {
+        const cell = document.createElement("td");
+        cell.textContent =
+          field === "artist"
+            ? item.artist?.name || "Sin artista"
+            : (item[field] ?? "—");
+        row.appendChild(cell);
+      }
+      tbody.appendChild(row);
+    }
+    status.textContent = data.length
+      ? data.length + " registros en el catálogo."
+      : "Todavía no hay registros.";
+  } catch {
+    status.textContent =
+      "No se pudo cargar el catálogo. Comprueba la conexión con el servidor y recarga la página.";
+    status.setAttribute("role", "alert");
+  }
 });
